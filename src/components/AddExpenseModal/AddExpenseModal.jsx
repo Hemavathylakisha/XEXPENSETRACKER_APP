@@ -94,14 +94,14 @@ const AddExpenseModal = ({open, handleClose, balance, addExpense}) => {
     ))}
     </select>
     <TextField
-      name='Date'
-      label="Date"
-      type="date"
-      value={date}
-      onChange={(e) => setDate(e.target.value)}
-      fullWidth
-      sx={{ mt: 2 }}
-    />
+        name="date"
+        label="Date"
+        type="date"
+        value={date}
+        onChange={(e) => setDate(e.target.value)}
+        fullWidth
+        sx={{ mt: 2 }}
+        />
     <Box sx={{ display: 'flex', justifyContent: 'space-between', mt: 3 }}>
       <Button variant="contained" onClick={handleSubmit} sx={{background:"#ce801aff"}}>
         Add Expense

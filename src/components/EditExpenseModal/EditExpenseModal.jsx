@@ -90,7 +90,7 @@ const EditExpenseModal = ({ open, handleClose, expense, updateExpense, balance }
             ))}
             </select>
           <TextField
-            name="Date"
+            name="date"
             label="Date"
             type="date"
             value={date}
