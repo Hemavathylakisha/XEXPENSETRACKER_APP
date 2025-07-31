@@ -1,5 +1,5 @@
 
-import { Box, Typography, Button, Modal, TextField, MenuItem } from '@mui/material';
+import { Box, Typography, Button, Modal, TextField} from '@mui/material';
 import React, {useState} from 'react';
 import {v4 as expid} from 'uuid';
 
@@ -86,16 +86,16 @@ const AddExpenseModal = ({open, handleClose, balance, addExpense}) => {
     onChange={(e) => setCategory(e.target.value)}
     style={{ width: '100%', padding: '10px', marginTop: '8px', borderRadius: '4px' }}
     >
-    <option value="">Select a Category</option>
+    <option value="" name="category">Select a Category</option>
     {categories.map((cat) => (
-        <option key={cat} value={cat}>
+        <option key={cat} value={cat} name={cat}>
         {cat}
         </option>
     ))}
     </select>
     <TextField
         name="date"
-        label="Date"
+        label="date"
         type="date"
         value={date}
         onChange={(e) => setDate(e.target.value)}

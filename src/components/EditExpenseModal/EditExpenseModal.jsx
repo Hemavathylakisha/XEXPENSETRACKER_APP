@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import {
-  Modal, Box, Typography, TextField, Button, MenuItem, Stack
+  Modal, Box, Typography, TextField, Button, Stack
 } from '@mui/material';
 
 const modalStyle = {
@@ -84,14 +84,14 @@ const EditExpenseModal = ({ open, handleClose, expense, updateExpense, balance }
             onChange={(e) => setCategory(e.target.value)}
             style={{ width: '100%', padding: '10px', borderRadius: '4px' }}
             >
-            <option value="">Select a Category</option>
+            <option value="" name="category">Select a Category</option>
             {categories.map((cat) => (
-                <option key={cat} value={cat}>{cat}</option>
+                <option key={cat} value={cat} name={cat}>{cat}</option>
             ))}
             </select>
           <TextField
             name="date"
-            label="Date"
+            label="date"
             type="date"
             value={date}
             onChange={(e) => setDate(e.target.value)}
