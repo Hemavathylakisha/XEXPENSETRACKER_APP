@@ -80,23 +80,19 @@ const AddExpenseModal = ({open, handleClose, balance, addExpense}) => {
       fullWidth
       sx={{ mt: 2 }}
     />
-    <TextField
-        name="Category" 
-        label="Category"
-        placeholder="Select a Category"
-        select       
-        value={category}
-        onChange={(e) => setCategory(e.target.value)}
-        fullWidth
-        sx={{ mt: 2 }}
-        inputProps={{ 'data-cy': 'category-select' }}
-        >
-        {categories.map((cat) => (
-            <MenuItem value={cat} key={cat}>
-            {cat}
-            </MenuItem>
-        ))}
-        </TextField>
+        <select
+    name="category"
+    value={category}
+    onChange={(e) => setCategory(e.target.value)}
+    style={{ width: '100%', padding: '10px', marginTop: '8px', borderRadius: '4px' }}
+    >
+    <option value="">Select a Category</option>
+    {categories.map((cat) => (
+        <option key={cat} value={cat}>
+        {cat}
+        </option>
+    ))}
+    </select>
     <TextField
       name='Date'
       label="Date"
