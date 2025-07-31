@@ -79,17 +79,17 @@ const EditExpenseModal = ({ open, handleClose, expense, updateExpense, balance }
             fullWidth
           />
           <TextField
-            name="Category"
+            name="category" 
             label="Category"
             select
             value={category}
             onChange={(e) => setCategory(e.target.value)}
             fullWidth
-          >
+            >
             {categories.map((cat) => (
-              <MenuItem key={cat} value={cat}>{cat}</MenuItem>
+                <MenuItem key={cat} value={cat}>{cat}</MenuItem>
             ))}
-          </TextField>
+            </TextField>
           <TextField
             name="Date"
             label="Date"

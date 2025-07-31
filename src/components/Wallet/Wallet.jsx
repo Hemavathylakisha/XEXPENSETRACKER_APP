@@ -50,7 +50,7 @@ const Wallet = ({balance, setBalance}) => {
                     onChange={(e)=>setAmountToAdd(e.target.value)}
                     type="number" sx={{marginRight:"10px"}}
                     />
-                    <Button variant='contained' size="medium" onClick={handleAdd} sx={{marginRight:"10px", marginTop:"10px",background:"#ce801aff"}}>Add Balance</Button>
+                    <Button type="submit" variant='contained' size="medium" onClick={handleAdd} sx={{marginRight:"10px", marginTop:"10px",background:"#ce801aff"}}>Add Balance</Button>
                     <Button variant='outlined' size="medium" onClick={()=>setOpen(false)} sx={{marginTop:"10px"}}>Cancel</Button>
                 </Box>
             </Box>
