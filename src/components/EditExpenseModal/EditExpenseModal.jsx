@@ -79,12 +79,13 @@ const EditExpenseModal = ({ open, handleClose, expense, updateExpense, balance }
             fullWidth
           />
           <TextField
-            name="category" 
+            name="Category" 
             label="Category"
             select
             value={category}
             onChange={(e) => setCategory(e.target.value)}
             fullWidth
+            inputProps={{ 'data-cy': 'category-select' }}
             >
             {categories.map((cat) => (
                 <MenuItem key={cat} value={cat}>{cat}</MenuItem>

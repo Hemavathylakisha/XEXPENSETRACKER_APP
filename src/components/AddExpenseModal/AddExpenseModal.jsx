@@ -81,7 +81,7 @@ const AddExpenseModal = ({open, handleClose, balance, addExpense}) => {
       sx={{ mt: 2 }}
     />
     <TextField
-        name="category" 
+        name="Category" 
         label="Category"
         placeholder="Select a Category"
         select       
@@ -89,6 +89,7 @@ const AddExpenseModal = ({open, handleClose, balance, addExpense}) => {
         onChange={(e) => setCategory(e.target.value)}
         fullWidth
         sx={{ mt: 2 }}
+        inputProps={{ 'data-cy': 'category-select' }}
         >
         {categories.map((cat) => (
             <MenuItem value={cat} key={cat}>
