@@ -1,0 +1,113 @@
+
+import { Box, Typography, Button, Modal, TextField, MenuItem } from '@mui/material';
+import React, {useState} from 'react';
+import {v4 as expid} from 'uuid';
+
+
+const categories = ['Food', 'Travel', 'Shopping', 'Entertainment', 'Health', 'Other']
+
+const AddExpenseModal = ({open, handleClose, balance, addExpense}) => {
+    const [title, setTitle] = useState('');
+    const [amount, setAmount]= useState('');
+    const [category, setCategory] = useState('');
+    const [date, setDate]= useState('');
+    
+    const handleReset = () => {
+        setTitle('');
+        setCategory('');
+        setAmount('');
+        setDate('');
+    }
+
+    const handleSubmit = () => {
+        const parsedAmount  = parseFloat(amount);
+        if(!title || !parsedAmount || !category || !date){
+          alert('Please fill in all fields');
+            return;  
+        }
+        if(amount > balance){
+            alert("You don't have a enough balance in the expense");
+        }
+
+        const newExpense = {
+        id: expid(),
+        title,
+        amount: parsedAmount,
+        category,
+        date,
+        };
+        addExpense(newExpense);
+        handleReset();
+        handleClose();
+    }
+
+  return (
+    <Modal open={open} onClose={handleClose} >
+        <Box
+    sx={{
+      position: 'absolute',
+      top: '50%',
+      left: '50%',
+      transform: 'translate(-50%, -50%)',
+      bgcolor: 'background.paper',
+      boxShadow: 24,
+      p: 4,
+      borderRadius: '12px',
+      width: 350,color:'#3b3b3b'
+    }}
+  >
+    <Typography variant="h6" gutterBottom>
+      Add Expense
+    </Typography>
+
+    <TextField
+      label="Title"
+      value={title}
+      onChange={(e) => setTitle(e.target.value)}
+      fullWidth
+      sx={{ mt: 2 }}
+    />
+    <TextField
+      label="Amount"
+      type="number"
+      value={amount}
+      onChange={(e) => setAmount(e.target.value)}
+      fullWidth
+      sx={{ mt: 2 }}
+    />
+    <TextField
+      label="Category"
+      select
+      value={category}
+      onChange={(e) => setCategory(e.target.value)}
+      fullWidth
+      sx={{ mt: 2 }}
+    >
+      {categories.map((cat) => (
+        <MenuItem value={cat} key={cat}>
+          {cat}
+        </MenuItem>
+      ))}
+    </TextField>
+    <TextField
+      label="Date"
+      type="date"
+      value={date}
+      onChange={(e) => setDate(e.target.value)}
+      fullWidth
+      sx={{ mt: 2 }}
+    />
+    <Box sx={{ display: 'flex', justifyContent: 'space-between', mt: 3 }}>
+      <Button variant="contained" onClick={handleSubmit} sx={{background:"#ce801aff"}}>
+        Add Expense
+      </Button>
+      <Button variant="outlined" onClick={handleClose}>
+        Cancel
+      </Button>
+    </Box>
+  </Box>
+    </Modal>
+  );
+}
+
+export default AddExpenseModal;

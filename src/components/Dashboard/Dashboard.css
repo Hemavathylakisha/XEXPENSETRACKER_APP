@@ -1,0 +1,10 @@
+
+.Wcontainer{
+    display:flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    background:#626262;
+    border-radius: 10px;
+    min-height: 37vh;
+    margin-bottom: 30px;
+}
