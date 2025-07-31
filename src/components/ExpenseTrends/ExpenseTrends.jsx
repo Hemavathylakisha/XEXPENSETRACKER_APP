@@ -17,8 +17,8 @@ const ExpenseTrends = ({ expenses }) => {
 
   const colors = {
     Food: '#a084dc',
-    Entertainment: '#ff914d',
-    Travel: '#facc15'
+    Entertainment: '#a084dc',
+    Travel: '#aa3763ff'
   };
   const hoverColor = '#ebdcdc88';
 

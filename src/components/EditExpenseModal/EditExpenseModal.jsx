@@ -72,7 +72,7 @@ const EditExpenseModal = ({ open, handleClose, expense, updateExpense, balance }
           />
           <TextField
             name="price"
-            label="Amount"
+            label="amount"
             type="number"
             value={amount}
             onChange={(e) => setAmount(e.target.value)}

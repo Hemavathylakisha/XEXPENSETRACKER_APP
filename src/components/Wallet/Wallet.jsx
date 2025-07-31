@@ -36,7 +36,7 @@ const Wallet = ({balance, setBalance}) => {
     <Box  textAlign="center" mt={4} sx={{background:"#9b9b9b", borderRadius:"10px", width: "30%",
     height: "220px", display:"flex", justifyContent:"center",alignItems:"center", flexDirection:"column"}}>
         <Typography variant='h4'>Wallet Balance : ₹{balance}</Typography>
-        <Button variant="contained" onClick={()=>setOpen(true)} sx={{ mt: 2 , background:"#51d331ff"}}>+ Add Income</Button>
+        <Button type="button" label="+ Add Income" variant="contained" onClick={()=>setOpen(true)} sx={{ mt: 2 , background:"#51d331ff"}}>+ Add Income</Button>
 
         <Modal open={open} onClose={()=>setOpen(false)}>
             <Box sx={modalStyle}>
