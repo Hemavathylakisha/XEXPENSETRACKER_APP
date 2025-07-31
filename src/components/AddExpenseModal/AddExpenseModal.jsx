@@ -61,8 +61,11 @@ const AddExpenseModal = ({open, handleClose, balance, addExpense}) => {
     </Typography>
 
     <TextField
+      name="title"
       label="Title"
       value={title}
+      type="text"
+      placeholder="Expense Title"
       onChange={(e) => setTitle(e.target.value)}
       fullWidth
       sx={{ mt: 2 }}

@@ -45,6 +45,7 @@ const Wallet = ({balance, setBalance}) => {
                     <TextField 
                     value={amountToAdd} 
                     label="Income Amount" 
+                    placeholder="Income Amount"
                     onChange={(e)=>setAmountToAdd(e.target.value)}
                     type="number" sx={{marginRight:"10px"}}
                     />
