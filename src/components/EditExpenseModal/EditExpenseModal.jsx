@@ -64,12 +64,14 @@ const EditExpenseModal = ({ open, handleClose, expense, updateExpense, balance }
         <Typography variant="h6" mb={2}>Edit Expense</Typography>
         <Stack spacing={2}>
           <TextField
+            name="title"
             label="Title"
             value={title}
             onChange={(e) => setTitle(e.target.value)}
             fullWidth
           />
           <TextField
+            name="price"
             label="Amount"
             type="number"
             value={amount}
@@ -77,6 +79,7 @@ const EditExpenseModal = ({ open, handleClose, expense, updateExpense, balance }
             fullWidth
           />
           <TextField
+            name="Category"
             label="Category"
             select
             value={category}
@@ -88,6 +91,7 @@ const EditExpenseModal = ({ open, handleClose, expense, updateExpense, balance }
             ))}
           </TextField>
           <TextField
+            name="Date"
             label="Date"
             type="date"
             value={date}

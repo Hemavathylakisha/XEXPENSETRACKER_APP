@@ -65,21 +65,25 @@ const AddExpenseModal = ({open, handleClose, balance, addExpense}) => {
       label="Title"
       value={title}
       type="text"
-      placeholder="Expense Title"
+      placeholder="Title"
       onChange={(e) => setTitle(e.target.value)}
       fullWidth
       sx={{ mt: 2 }}
     />
     <TextField
+      name="Price"
       label="Amount"
       type="number"
+      placeholder="Price"
       value={amount}
       onChange={(e) => setAmount(e.target.value)}
       fullWidth
       sx={{ mt: 2 }}
     />
     <TextField
+      name="Category"
       label="Category"
+      placeholder="Select a Category"
       select
       value={category}
       onChange={(e) => setCategory(e.target.value)}
@@ -93,6 +97,7 @@ const AddExpenseModal = ({open, handleClose, balance, addExpense}) => {
       ))}
     </TextField>
     <TextField
+      name='Date'
       label="Date"
       type="date"
       value={date}

@@ -43,6 +43,7 @@ const Wallet = ({balance, setBalance}) => {
                 <Typography variant='h3' mb={2}>Add Balance</Typography>
                 <Box spacing={3}>
                     <TextField 
+                    name="IncomeAmount"
                     value={amountToAdd} 
                     label="Income Amount" 
                     placeholder="Income Amount"
