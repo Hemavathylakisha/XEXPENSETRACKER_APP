@@ -4,7 +4,7 @@ import React, {useState} from 'react';
 import {v4 as expid} from 'uuid';
 
 
-const categories = ['Food', 'Travel', 'Shopping', 'Entertainment', 'Health', 'Other']
+const categories = ['food', 'travel', 'shopping', 'entertainment', 'health', 'other']
 
 const AddExpenseModal = ({open, handleClose, balance, addExpense}) => {
     const [title, setTitle] = useState('');
