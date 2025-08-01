@@ -35,7 +35,7 @@ const Wallet = ({balance, setBalance}) => {
   return (
     <Box  textAlign="center" mt={4} sx={{background:"#9b9b9b", borderRadius:"10px", width: "30%",
     height: "220px", display:"flex", justifyContent:"center",alignItems:"center", flexDirection:"column"}}>
-        <Typography variant='h2'>Wallet Balance : ${balance.toFixed(2)}</Typography>
+        <Typography variant='h4'>Wallet Balance : ${balance.toFixed(2)}</Typography>
         <Button type="button" label="+ Add Income" variant="contained" onClick={()=>setOpen(true)} sx={{ mt: 2 , background:"#51d331ff"}}>+ Add Income</Button>
 
         <Modal open={open} onClose={()=>setOpen(false)}>
