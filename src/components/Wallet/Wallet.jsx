@@ -22,9 +22,9 @@ const Wallet = ({balance, setBalance}) => {
     const [amountToAdd, setAmountToAdd] = useState("");
     
     const handleAdd = () => {
-        const amount = parseFloat(amountToAdd);
-        if(!isNaN(amount) && amount > 0){
-            setBalance((prev)=> prev + amount);
+        const price = parseFloat(amountToAdd);
+        if(!isNaN(price) && price > 0){
+            setBalance((prev)=> prev + price);
             setAmountToAdd('')
             setOpen(false)
         }else{
