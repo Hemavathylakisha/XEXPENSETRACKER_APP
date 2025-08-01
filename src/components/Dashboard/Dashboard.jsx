@@ -56,7 +56,7 @@ const Dashboard = () => {
 
   const total = expenses.reduce((acc, expense) => acc + expense.price, 0);
 
-  const startingBalance = balance + expenses.reduce((acc, exp) => acc + exp.price, 0);
+  // const startingBalance = balance + expenses.reduce((acc, exp) => acc + exp.price, 0);
 
   return (
     <>
@@ -96,7 +96,7 @@ const Dashboard = () => {
           expenses={expenses}
           onEdit={handleEdit}
           onDelete={deleteExpense}
-          initialBalance={startingBalance}
+          total={total}
         />
          
         <ExpenseTrends expenses={expenses} />          
