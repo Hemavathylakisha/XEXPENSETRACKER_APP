@@ -7,6 +7,7 @@ const Expenses = ({ total, onAddClick }) => {
     height: "220px", display:"flex", justifyContent:"center",alignItems:"center", flexDirection:"column"}}>
       <Typography variant='h4'>Add Expense: ₹{total}</Typography>
       <Button
+      data-testid="add-expense-button"
         variant="contained"
         onClick={onAddClick}
         sx={{ mt: 2 , background:"#e03f34ff"}}
