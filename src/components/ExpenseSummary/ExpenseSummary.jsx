@@ -12,9 +12,9 @@ const ExpenseSummary = ({ expenses }) => {
 
   expenses.forEach(exp => {
     if (dataMap[exp.category]) {
-      dataMap[exp.category] += exp.amount;
+      dataMap[exp.category] += exp.price;
     } else {
-      dataMap[exp.category] = exp.amount;
+      dataMap[exp.category] = exp.price;
     }
   });
 

@@ -26,7 +26,7 @@ const EditExpenseModal = ({ open, handleClose, expense, updateExpense, balance }
   useEffect(() => {
     if (expense) {
       setTitle(expense.title);
-      setPrice(expense.amount.toString());
+      setPrice(expense.price.toString());
       setCategory(expense.category);
       setDate(expense.date);
     }

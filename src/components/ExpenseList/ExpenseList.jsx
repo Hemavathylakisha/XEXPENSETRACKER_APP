@@ -9,7 +9,7 @@ import DeleteIcon from '@mui/icons-material/Delete';
 const ExpenseList = ({ expenses, onEdit, onDelete }) => {
   return (
     <Box sx={{width:"65%"}}>
-        <Typography variant="h4" align='left'>Recent Transactions</Typography>
+        <Typography variant="h5" align='left'>Recent Transactions</Typography>
     <List sx={{background:"#ffffff",borderRadius:"10px",color:"#3d3d3d"}}>
       {expenses.map((expense) => (
         <ListItem
@@ -38,7 +38,7 @@ const ExpenseList = ({ expenses, onEdit, onDelete }) => {
                     color="#f1b718ff" // or use "red", or "#f1b718ff"
                    
                 >
-                    ₹{expense.amount}
+                    ₹{expense.price}
                 </Typography>
                 </Box>
             }

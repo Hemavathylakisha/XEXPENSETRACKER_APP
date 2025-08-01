@@ -6,7 +6,7 @@ const ExpenseTrends = ({ expenses }) => {
 
   // Group expenses by category
   const categoryTotals = expenses.reduce((acc, curr) => {
-    acc[curr.category] = (acc[curr.category] || 0) + curr.amount;
+    acc[curr.category] = (acc[curr.category] || 0) + curr.price;
     return acc;
   }, {});
 

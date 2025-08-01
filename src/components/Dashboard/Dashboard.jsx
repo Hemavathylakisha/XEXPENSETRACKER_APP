@@ -33,7 +33,7 @@ const Dashboard = () => {
 
   const addExpense = (expense) => {
     setExpenses(prev => [...prev, expense]);
-    setBalance(prev => prev - expense.amount);
+    setBalance(prev => prev - expense.price);
   };
 
   const handleEdit = (expense) => {
@@ -48,12 +48,12 @@ const Dashboard = () => {
     setBalance(prev => prev - amountDiff);
   };
 
-  const deleteExpense = (id, amount) => {
+  const deleteExpense = (id, price) => {
     setExpenses(prev => prev.filter(exp => exp.id !== id));
-    setBalance(prev => prev + amount);
+    setBalance(prev => prev + price);
   };
 
-  const total = expenses.reduce((acc, expense) => acc + expense.amount, 0);
+  const total = expenses.reduce((acc, expense) => acc + expense.price, 0);
 
   return (
     <>
