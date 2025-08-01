@@ -11,7 +11,8 @@ import '../Dashboard/Dashboard.css';
 const Dashboard = () => {
   const [balance, setBalance] = useState(() => {
     const stored = localStorage.getItem("walletBalance");
-    return stored ? parseFloat(stored) : 5000;
+    const parsed = parseFloat(stored);
+    return !isNaN(parsed) ? parsed : 5000;
   });
 
   const [expenses, setExpenses] = useState(() => {
