@@ -102,7 +102,7 @@ const AddExpenseModal = ({open, handleClose, balance, addExpense}) => {
         sx={{ mt: 2 }}
         />
     <Box sx={{ display: 'flex', justifyContent: 'space-between', mt: 3 }}>
-      <Button variant="contained" onClick={handleSubmit} sx={{background:"#ce801aff"}}>
+      <Button variant="contained" onClick={handleSubmit} sx={{background:"#ce801aff"}} type="submit" >
         Add Expense
       </Button>
       <Button variant="outlined" onClick={handleClose}>

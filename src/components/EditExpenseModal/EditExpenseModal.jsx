@@ -96,7 +96,7 @@ const EditExpenseModal = ({ open, handleClose, expense, updateExpense, balance }
             onChange={(e) => setDate(e.target.value)}
             fullWidth
           />
-          <Button variant="contained" onClick={handleSubmit} sx={{background:"#ce801aff"}}>
+          <Button variant="contained" onClick={handleSubmit} sx={{background:"#ce801aff"}} type="submit">
             Save Changes
           </Button>
         </Stack>

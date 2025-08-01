@@ -21,7 +21,7 @@ const ExpenseList = ({ expenses, onEdit, onDelete, initialBalance  }) => {
               <IconButton onClick={() => onEdit(expense)} sx={{backgroundColor:"#f3ef17ff", borderRadius:"15px"}}>
                 <EditIcon />
               </IconButton>
-              <IconButton onClick={() => onDelete(expense.id, expense.amount)} sx={{backgroundColor:"#f72525ff", borderRadius:"15px"}}>
+              <IconButton onClick={() => onDelete(expense.id, expense.price)} sx={{backgroundColor:"#f72525ff", borderRadius:"15px"}}>
                 <DeleteIcon />
               </IconButton>              
             </Box>

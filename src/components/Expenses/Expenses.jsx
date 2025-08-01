@@ -8,6 +8,7 @@ const Expenses = ({ total, onAddClick }) => {
       <Typography variant='h4'>Add Expense: ₹{total}</Typography>
       <Button
       data-testid="add-expense-button"
+      type="submit"
         variant="contained"
         onClick={onAddClick}
         sx={{ mt: 2 , background:"#e03f34ff"}}
