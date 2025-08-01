@@ -65,23 +65,25 @@ const AddExpenseModal = ({open, handleClose, balance, addExpense}) => {
       label="Title"
       value={title}
       type="text"
-      placeholder="Title"
+      placeholder="Enter expense title"
       onChange={(e) => setTitle(e.target.value)}
       fullWidth
       sx={{ mt: 2 }}
     />
     <TextField
-      name="price"
-      label="price"
-      type="number"
-      placeholder="Price"
+       name="price"
+        type="number"
+        label="Price"
+        placeholder="Enter amount"
       value={price}
       onChange={(e) => setPrice(e.target.value)}
       fullWidth
       sx={{ mt: 2 }}
     />
-        <select
+        <TextField
     name="category"
+    select
+    label="Category"
     value={category}
     onChange={(e) => setCategory(e.target.value)}
     style={{ width: '100%', padding: '10px', marginTop: '8px', borderRadius: '4px' }}
@@ -92,7 +94,7 @@ const AddExpenseModal = ({open, handleClose, balance, addExpense}) => {
         {cat}
         </option>
     ))}
-    </select>
+    </TextField>
     <TextField
         name="date"
         type="date"
