@@ -8,31 +8,31 @@ const categories = ['Food', 'Travel', 'Shopping', 'Entertainment', 'Health', 'Ot
 
 const AddExpenseModal = ({open, handleClose, balance, addExpense}) => {
     const [title, setTitle] = useState('');
-    const [amount, setAmount]= useState('');
+    const [price, setPrice]= useState('');
     const [category, setCategory] = useState('');
     const [date, setDate]= useState('');
     
     const handleReset = () => {
         setTitle('');
         setCategory('');
-        setAmount('');
+        setPrice('');
         setDate('');
     }
 
     const handleSubmit = () => {
-        const parsedAmount  = parseFloat(amount);
+        const parsedAmount  = parseFloat(price);
         if(!title || !parsedAmount || !category || !date){
           alert('Please fill in all fields');
             return;  
         }
-        if(amount > balance){
+        if(price > balance){
             alert("You don't have a enough balance in the expense");
         }
 
         const newExpense = {
         id: expid(),
         title,
-        amount: parsedAmount,
+        price: parsedAmount,
         category,
         date,
         };
@@ -71,12 +71,12 @@ const AddExpenseModal = ({open, handleClose, balance, addExpense}) => {
       sx={{ mt: 2 }}
     />
     <TextField
-      name="amount"
-      label="amount"
+      name="price"
+      label="price"
       type="number"
       placeholder="Price"
-      value={amount}
-      onChange={(e) => setAmount(e.target.value)}
+      value={price}
+      onChange={(e) => setPrice(e.target.value)}
       fullWidth
       sx={{ mt: 2 }}
     />
@@ -95,7 +95,6 @@ const AddExpenseModal = ({open, handleClose, balance, addExpense}) => {
     </select>
     <TextField
         name="date"
-        label="date"
         type="date"
         value={date}
         onChange={(e) => setDate(e.target.value)}

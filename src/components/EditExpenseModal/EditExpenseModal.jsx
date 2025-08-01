@@ -19,27 +19,27 @@ const categories = ['Food', 'Travel', 'Shopping', 'Entertainment', 'Health', 'Ot
 
 const EditExpenseModal = ({ open, handleClose, expense, updateExpense, balance }) => {
   const [title, setTitle] = useState('');
-  const [amount, setAmount] = useState('');
+  const [price, setPrice] = useState('');
   const [category, setCategory] = useState('');
   const [date, setDate] = useState('');
 
   useEffect(() => {
     if (expense) {
       setTitle(expense.title);
-      setAmount(expense.amount.toString());
+      setPrice(expense.amount.toString());
       setCategory(expense.category);
       setDate(expense.date);
     }
   }, [expense]);
 
   const handleSubmit = () => {
-    const newAmount = parseFloat(amount);
-    if (!title || !amount || !category || !date) {
+    const newAmount = parseFloat(price);
+    if (!title || !price || !category || !date) {
       alert('Please fill in all fields');
       return;
     }
 
-    const amountDiff = newAmount - expense.amount;
+    const amountDiff = newAmount - expense.price;
 
     if (amountDiff > balance) {
       alert("You don't have enough balance to increase this expense.");
@@ -49,7 +49,7 @@ const EditExpenseModal = ({ open, handleClose, expense, updateExpense, balance }
     const updated = {
       ...expense,
       title,
-      amount: newAmount,
+      price: newAmount,
       category,
       date
     };
@@ -71,11 +71,11 @@ const EditExpenseModal = ({ open, handleClose, expense, updateExpense, balance }
             fullWidth
           />
           <TextField
-            name="amount"
-            label="amount"
+            name="price"
+            label="price"
             type="number"
-            value={amount}
-            onChange={(e) => setAmount(e.target.value)}
+            value={price}
+            onChange={(e) => setPrice(e.target.value)}
             fullWidth
           />
             <select
@@ -91,7 +91,6 @@ const EditExpenseModal = ({ open, handleClose, expense, updateExpense, balance }
             </select>
           <TextField
             name="date"
-            label="date"
             type="date"
             value={date}
             onChange={(e) => setDate(e.target.value)}
