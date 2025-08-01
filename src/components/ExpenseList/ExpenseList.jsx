@@ -6,7 +6,7 @@ import {
 import EditIcon from '@mui/icons-material/Edit';
 import DeleteIcon from '@mui/icons-material/Delete';
 
-const ExpenseList = ({ expenses, onEdit, onDelete }) => {
+const ExpenseList = ({ expenses, onEdit, onDelete, initialBalance  }) => {
   return (
     <Box sx={{width:"65%"}}>
         <Typography variant="h5" align='left'>Recent Transactions</Typography>
@@ -14,32 +14,35 @@ const ExpenseList = ({ expenses, onEdit, onDelete }) => {
       {expenses.map((expense) => (
         <ListItem
           key={expense.id}
-          secondaryAction={
-            <>
+          secondaryAction={ 
+            <Box sx={{Width:"18%",display: "flex", gap: "10px", alignItems: "center"}}>
+              <Typography fontWeight="bold"
+                    color="#f1b718ff">₹{initialBalance}</Typography>
               <IconButton onClick={() => onEdit(expense)} sx={{backgroundColor:"#f3ef17ff", borderRadius:"15px"}}>
                 <EditIcon />
               </IconButton>
               <IconButton onClick={() => onDelete(expense.id, expense.amount)} sx={{backgroundColor:"#f72525ff", borderRadius:"15px"}}>
                 <DeleteIcon />
-              </IconButton>
-            </>
+              </IconButton>              
+            </Box>
           }
           sx={{borderBottom:"1px solid #dedede"}}
         >
           <ListItemText
             primary={
-                <Box  sx={{display:"flex", justifyContent:"flex-start",gap:"20px"}}>
-                <Typography variant="body1" fontWeight="bold">
+                <Box  sx={{display:"flex", justifyContent:"spece-between",gap:"20px"}}>
+                <Typography variant="body1" fontWeight="bold" >
                     {expense.title}
                 </Typography>
                 <Typography
                     variant="body1"
                     fontWeight="bold"
-                    color="#f1b718ff" // or use "red", or "#f1b718ff"
+                    color="#70e412ff" // or use "red", or "#f1b718ff"
                    
                 >
                     ₹{expense.price}
                 </Typography>
+                
                 </Box>
             }
             secondary={`${expense.category} | ${expense.date}`}
