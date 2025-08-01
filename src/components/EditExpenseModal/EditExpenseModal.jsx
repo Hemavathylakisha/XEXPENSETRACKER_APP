@@ -71,7 +71,7 @@ const EditExpenseModal = ({ open, handleClose, expense, updateExpense, balance }
             fullWidth
           />
           <TextField
-            name="price"
+            name="amount"
             label="amount"
             type="number"
             value={amount}

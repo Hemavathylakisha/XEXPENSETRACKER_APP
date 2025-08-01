@@ -71,7 +71,7 @@ const AddExpenseModal = ({open, handleClose, balance, addExpense}) => {
       sx={{ mt: 2 }}
     />
     <TextField
-      name="price"
+      name="amount"
       label="amount"
       type="number"
       placeholder="Price"
