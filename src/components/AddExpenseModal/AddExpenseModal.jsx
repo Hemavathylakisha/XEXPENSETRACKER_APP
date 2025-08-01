@@ -1,5 +1,5 @@
 
-import { Box, Typography, Button, Modal, TextField} from '@mui/material';
+import { Box, Typography, Button, Modal, TextField, MenuItem} from '@mui/material';
 import React, {useState} from 'react';
 import {v4 as expid} from 'uuid';
 
@@ -80,21 +80,21 @@ const AddExpenseModal = ({open, handleClose, balance, addExpense}) => {
       fullWidth
       sx={{ mt: 2 }}
     />
-        <TextField
-    name="category"
-    select
-    label="Category"
-    value={category}
-    onChange={(e) => setCategory(e.target.value)}
-    style={{ width: '100%', padding: '10px', marginTop: '8px', borderRadius: '4px' }}
-    >
-    <option value="" name="category">Select a Category</option>
-    {categories.map((cat) => (
-        <option key={cat} value={cat} name={cat}>
-        {cat}
-        </option>
-    ))}
-    </TextField>
+       <TextField
+  select
+  label="Category"
+  name="category"
+  value={category}
+  onChange={(e) => setCategory(e.target.value)}
+  fullWidth
+  sx={{ mt: 2 }}
+>
+  {categories.map((cat) => (
+    <MenuItem key={cat} value={cat}>
+      {cat}
+    </MenuItem>
+  ))}
+</TextField>
     <TextField
         name="date"
         type="date"

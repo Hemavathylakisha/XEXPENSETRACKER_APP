@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import {
-  Modal, Box, Typography, TextField, Button, Stack
+  Modal, Box, Typography, TextField, Button, Stack, MenuItem
 } from '@mui/material';
 
 const modalStyle = {
@@ -15,7 +15,7 @@ const modalStyle = {
   width: 350
 };
 
-const categories = ['Food', 'Travel', 'Shopping', 'Entertainment', 'Health', 'Other'];
+const categories = ['food', 'travel', 'shopping', 'entertainment', 'health', 'other'];
 
 const EditExpenseModal = ({ open, handleClose, expense, updateExpense, balance }) => {
   const [title, setTitle] = useState('');
@@ -78,17 +78,24 @@ const EditExpenseModal = ({ open, handleClose, expense, updateExpense, balance }
             onChange={(e) => setPrice(e.target.value)}
             fullWidth
           />
-            <select
-            name="category"
-            value={category}
-            onChange={(e) => setCategory(e.target.value)}
-            style={{ width: '100%', padding: '10px', borderRadius: '4px' }}
-            >
-            <option value="" name="category">Select a Category</option>
-            {categories.map((cat) => (
-                <option key={cat} value={cat} name={cat}>{cat}</option>
-            ))}
-            </select>
+          <TextField
+          select
+  name="category"
+  label='select category'
+  value={category}
+  onChange={(e) => setCategory(e.target.value)}
+  fullWidth
+  displayEmpty
+>
+  <MenuItem value="" disabled>
+    Select a Category
+  </MenuItem>
+  {categories.map((cat) => (
+    <MenuItem key={cat} value={cat}>
+      {cat}
+    </MenuItem>
+  ))}
+</TextField>
           <TextField
             name="date"
             type="date"
