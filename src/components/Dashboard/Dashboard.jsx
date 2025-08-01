@@ -32,10 +32,14 @@ const Dashboard = () => {
     localStorage.setItem('expenses', JSON.stringify(expenses));
   }, [expenses]);
 
-  const addExpense = (expense) => {
-    setExpenses(prev => [...prev, expense]);
-    setBalance(prev => prev - expense.price);
+ const addExpense = (expense) => {
+  const newExpense = {
+    ...expense,
+    id: crypto.randomUUID ? crypto.randomUUID() : Date.now() // fallback for older browsers
   };
+  setExpenses(prev => [...prev, newExpense]);
+  setBalance(prev => prev - newExpense.price);
+};
 
   const handleEdit = (expense) => {
     setExpenseToEdit(expense);
