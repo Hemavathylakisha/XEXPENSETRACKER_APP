@@ -16,8 +16,8 @@ const ExpenseList = ({ expenses, onEdit, onDelete}) => {
           key={expense.id}
           secondaryAction={ 
             <Box sx={{Width:"18%",display: "flex", gap: "10px", alignItems: "center"}}>
-              {/* <Typography fontWeight="bold"
-                    color="#f1b718ff">₹{expense.price}</Typography> */}
+              <Typography fontWeight="bold"
+                    color="#f1b718ff">₹{expense.price}</Typography>
               <IconButton onClick={() => onEdit(expense)} sx={{backgroundColor:"#f3ef17ff", borderRadius:"15px"}}>
                 <EditIcon />
               </IconButton>
@@ -30,19 +30,14 @@ const ExpenseList = ({ expenses, onEdit, onDelete}) => {
         >
           <ListItemText
             primary={
-                <Box sx={{ display: "flex", flexDirection: "column" }}>
+                <Box >
                 <Typography variant="body1" fontWeight="bold">
                   {expense.title}
                 </Typography>
-                <Typography variant="body1" fontWeight="bold" color="#70e412ff">
-                  ₹{expense.price}
-                </Typography>
                 <Typography variant="body2" color="text.secondary">
-                  {expense.category}
+                  {expense.category} -  {expense.date}
                 </Typography>
-                <Typography variant="body2" color="text.secondary">
-                  {expense.date}
-                </Typography>
+                
               </Box>
             }
             // secondary={`${expense.category} | ${expense.date}`}

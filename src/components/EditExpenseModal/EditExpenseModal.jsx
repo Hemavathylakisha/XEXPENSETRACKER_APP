@@ -78,14 +78,14 @@ const EditExpenseModal = ({ open, handleClose, expense, updateExpense, balance }
             onChange={(e) => setPrice(e.target.value)}
             fullWidth
           />
-          <TextField
-          select
+         <TextField
+  select
   name="category"
-  label='select category'
+  label="Select Category"
   value={category}
   onChange={(e) => setCategory(e.target.value)}
   fullWidth
-  displayEmpty
+  SelectProps={{ displayEmpty: true }}
 >
   <MenuItem value="" disabled>
     Select a Category
