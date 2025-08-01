@@ -6,7 +6,7 @@ import {
 import EditIcon from '@mui/icons-material/Edit';
 import DeleteIcon from '@mui/icons-material/Delete';
 
-const ExpenseList = ({ expenses, onEdit, onDelete}) => {
+const ExpenseList = ({ expenses, onEdit, onDelete,total}) => {
   return (
     <Box sx={{width:"65%"}}>
         <Typography variant="h5" align='left'>Recent Transactions</Typography>
@@ -17,7 +17,7 @@ const ExpenseList = ({ expenses, onEdit, onDelete}) => {
           secondaryAction={ 
             <Box sx={{Width:"18%",display: "flex", gap: "10px", alignItems: "center"}}>
               <Typography fontWeight="bold"
-                    color="#f1b718ff">₹{expense.price}</Typography>
+                    color="#f1b718ff">₹{total}</Typography>
               <IconButton onClick={() => onEdit(expense)} sx={{backgroundColor:"#f3ef17ff", borderRadius:"15px"}}>
                 <EditIcon />
               </IconButton>

@@ -100,6 +100,7 @@ const Dashboard = () => {
           expenses={expenses}
           onEdit={handleEdit}
           onDelete={deleteExpense}
+          total={total}
         />
          
         <ExpenseTrends expenses={expenses} />          
