@@ -13,6 +13,7 @@ const ExpenseList = ({ expenses, onEdit, onDelete}) => {
     <List sx={{background:"#ffffff",borderRadius:"10px",color:"#3d3d3d"}}>
       {expenses.map((expense) => (
         <ListItem
+        data-testid="expense-item"
           key={expense.id}
           secondaryAction={ 
             <Box sx={{Width:"18%",display: "flex", gap: "10px", alignItems: "center"}}>
