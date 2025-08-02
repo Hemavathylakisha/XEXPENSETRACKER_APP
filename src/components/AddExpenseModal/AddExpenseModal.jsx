@@ -21,13 +21,14 @@ const AddExpenseModal = ({open, handleClose, balance, addExpense}) => {
 
     const handleSubmit = () => {
         const parsedAmount  = parseFloat(price);
-        if(!title || !parsedAmount || !category || !date){
+       if (!title || parsedAmount <= 0 || !category || !date) {
           alert('Please fill in all fields');
-            return;  
+          return;
         }
-        if(price > balance){
-            alert("You don't have a enough balance in the expense");
-        }
+        if (parsedAmount > balance) {
+        alert("You don't have enough balance in the expense");
+        return;
+}
 
         const newExpense = {
         id: expid(),
