@@ -29,24 +29,17 @@ const ExpenseList = ({ expenses, onEdit, onDelete}) => {
           sx={{borderBottom:"1px solid #dedede"}}
         >
           <ListItemText
-            primary={
-                <Box >
-                   <Box sx={{display:"flex",justifyContent:'space-between'}}>
-                        <Typography variant="body1" fontWeight="bold">
-                         {expense.title}
-                        </Typography>
-                        <Typography variant='body2' color="#f1b718ff" fontWeight="bold" sx={{paddingRight:"70px"}} >
-                        ₹{expense.price}
-                        </Typography>
-                    </Box>
-                <Typography variant="body3" color="text.secondary">
-                   {expense.category.charAt(0).toUpperCase() + expense.category.slice(1)} -  {expense.date}
-                </Typography>
-                
-              </Box>
-            }
-            // secondary={`${expense.category} | ${expense.date}`}
-          />
+              primary={
+                <Box>
+                  <Typography variant="body1" fontWeight="bold">
+                    {expense.title} - ₹{expense.price}
+                  </Typography>
+                  <Typography variant="body2" color="text.secondary">
+                    {expense.category.charAt(0).toUpperCase() + expense.category.slice(1)} - {expense.date}
+                  </Typography>
+                </Box>
+              }
+            />
         </ListItem>
       ))}
     </List>
