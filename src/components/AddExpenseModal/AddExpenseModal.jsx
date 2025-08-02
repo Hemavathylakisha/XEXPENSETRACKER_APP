@@ -82,23 +82,23 @@ const AddExpenseModal = ({open, handleClose, balance, addExpense}) => {
       sx={{ mt: 2 }}
     />
        <TextField
-  select
-  label="Category"
-  name="category"
-  value={category}
-  onChange={(e) => setCategory(e.target.value)}
-  fullWidth
-  sx={{ mt: 2 }}
-  data-testid="category"
+          select
+          name="category"
+          label="Category"
+          value={category}
+          onChange={(e) => setCategory(e.target.value)}
+          fullWidth
+          required
+           data-testid="category"
           SelectProps={{ native: true }} // <-- ADD THIS LINE
-          InputProps={{ style: { backgroundColor: "white" } }}
->
-  {categories.map((cat) => (
-    <MenuItem key={cat} value={cat}>
-      {cat}
-    </MenuItem>
-  ))}
-</TextField>
+          InputProps={{ style: { backgroundColor: "white" } }}
+        >
+          {categories.map((cat) => (
+            <option key={cat} value={cat}>
+              {cat}
+            </option>
+          ))}
+    </TextField>
     <TextField
         name="date"
         type="date"
