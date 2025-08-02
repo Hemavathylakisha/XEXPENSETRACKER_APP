@@ -32,7 +32,7 @@ const ExpenseList = ({ expenses, onEdit, onDelete}) => {
               primary={
                 <Box>
                   <Typography variant="body1" fontWeight="bold">
-                    {expense.title} - ₹{expense.price}
+                     {expense.title.charAt(0).toUpperCase() + expense.title.slice(1)} - ₹{expense.price}
                   </Typography>
                   <Typography variant="body2" color="text.secondary">
                     {expense.category.charAt(0).toUpperCase() + expense.category.slice(1)} - {expense.date}
