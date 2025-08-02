@@ -31,11 +31,16 @@ const ExpenseList = ({ expenses, onEdit, onDelete}) => {
           <ListItemText
             primary={
                 <Box >
-                <Typography variant="body1" fontWeight="bold">
-                  {expense.title} - ₹{expense.price}
-                </Typography>
-                <Typography variant="body2" color="text.secondary">
-                  {expense.category.charAt(0).toUpperCase() + expense.category.slice(1)} - {expense.date}
+                   <Box sx={{display:"flex",justifyContent:'space-between'}}>
+                        <Typography variant="body1" fontWeight="bold">
+                          {expense.category.charAt(0).toUpperCase() + expense.category.slice(1)}
+                        </Typography>
+                        <Typography variant='body2' color="#f1b718ff" fontWeight="bold" sx={{paddingRight:"120px"}} >
+                        ₹{expense.price}
+                        </Typography>
+                    </Box>
+                <Typography variant="body3" color="text.secondary">
+                   {expense.date}
                 </Typography>
                 
               </Box>
