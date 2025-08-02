@@ -4,24 +4,25 @@ import React, {useState} from 'react';
 import {v4 as expid} from 'uuid';
 
 
-const categories = ['food', 'travel', 'shopping', 'entertainment', 'health', 'other']
+const categories = ['Food', 'Travel', 'Shopping', 'Entertainment', 'Health', 'Other']
 
 const AddExpenseModal = ({open, handleClose, balance, addExpense}) => {
     const [title, setTitle] = useState('');
     const [price, setPrice]= useState('');
-    const [category, setCategory] = useState('');
+    const [category, setCategory] = useState('Food');
     const [date, setDate]= useState('');
     
     const handleReset = () => {
         setTitle('');
-        setCategory('');
+        setCategory('Food');
         setPrice('');
         setDate('');
     }
 
-    const handleSubmit = () => {
-        const parsedAmount  = parseFloat(price);
-       if (!title || parsedAmount <= 0 || !category || !date) {
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        const parsedAmount  = Number(price);
+       if (!title.trim() || parsedAmount <= 0 || !category || !date) {
           alert('Please fill in all fields');
           return;
         }
@@ -32,7 +33,7 @@ const AddExpenseModal = ({open, handleClose, balance, addExpense}) => {
 
         const newExpense = {
         id: expid(),
-        title,
+        title: title.trim(),
         price: parsedAmount,
         category,
         date,
