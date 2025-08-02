@@ -35,7 +35,7 @@ const ExpenseList = ({ expenses, onEdit, onDelete}) => {
                         <Typography variant="body1" fontWeight="bold">
                           {expense.category.charAt(0).toUpperCase() + expense.category.slice(1)}
                         </Typography>
-                        <Typography variant='body2' color="#f1b718ff" fontWeight="bold" sx={{paddingRight:"120px"}} >
+                        <Typography variant='body2' color="#f1b718ff" fontWeight="bold" sx={{paddingRight:"70px"}} >
                         ₹{expense.price}
                         </Typography>
                     </Box>
