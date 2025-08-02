@@ -89,6 +89,7 @@ const AddExpenseModal = ({open, handleClose, balance, addExpense}) => {
   onChange={(e) => setCategory(e.target.value)}
   fullWidth
   sx={{ mt: 2 }}
+  SelectProps={{ native: true }}
 >
   {categories.map((cat) => (
     <MenuItem key={cat} value={cat}>
